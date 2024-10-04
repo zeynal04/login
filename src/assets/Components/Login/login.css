@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.login-section {
+    height: 900px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("	https://colorlib.com/etc/lf/Login_v4/images/bg-01.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    height: 870px;
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form{
+    width: 390px;
+    height: 760px;
+    /* background-color: antiquewhite; */
+}
+
+.login-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    height: 95px;
+    font-weight: bold;
+}
+.login-input{
+    width: 100%;
+    height: 81px;
+    margin-bottom: 23px;  
+    position: relative;
+}
+.login-input input::placeholder{
+    color: #adadad;
+    font-size: 18px; 
+    padding-left: 13px;
+}
+.username , .lock{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: #adadad;
+    font-size: 22px;
+}
+.login-input span {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    padding-left: 7px;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-weight: 400px;
+}
+.login-input input {
+    width: 100%;
+    height: 55px;
+    padding-left: 2.5rem;
+    outline: none;
+    font-weight: 400px;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    /* color: #333333; */
+    line-height: 1.2;
+    display: block;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    /* padding: 0 7px 0 43px; */
+}
+
+.text-right{
+    height: 63px;
+    width: 100%;
+    padding-top: 8px;
+    text-align: right;
+}
+.text-right a {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    padding-top: 8px;
+    list-style-type: none;
+    text-decoration: none; 
+    font-weight: 400px;
+}
+
+.login-form button  {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+}
+
+.text-center {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-center a {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
+    font-weight: 400;
+    margin-top: 20px;
+}
+.icons{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.icons a {
+    width: 50px;
+    height: 50px;
+}
+.icons .facebook {
+    background: #3b5998;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 25px ;
+    color: #fff;
+}
+.icons .twitter {
+    font-size: 25px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #1da1f2;
+}
+.icons .google {
+    font-size: 25px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    background-color:#ea4335;
+}
+.text-bottom{
+    height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+.txt1{
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
+}
+.txt2{
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    text-transform: uppercase;
+}
