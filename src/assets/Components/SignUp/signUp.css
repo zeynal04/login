@@ -64,7 +64,7 @@ form h1 {
     margin-bottom: 2.5rem;
 }
 
-.form-input span {
+.form-input label {
     display: block;
     font-family: Poppins-SemiBold;
     font-size: 18px;
@@ -108,13 +108,13 @@ form h1 {
     outline: none;
     border: none;
 }
-.check-box span{
+.check-box label{
     font-family: Poppins-Regular;
     font-size: 15px;
     color: #999999;
     line-height: 1.4;
 }
-.check-box span .terms {
+.check-box label .terms {
     font-family: Poppins-Regular;
     font-size: 15px;
     color: #666666;
@@ -155,4 +155,11 @@ form h1 {
     color: #666666;
     line-height: 1.4;
     font-weight: 400;
+}
+
+.input-error {
+    color: red;
+    font-size: 16px;
+    margin-top: 1rem;
+    display: block;
 }
