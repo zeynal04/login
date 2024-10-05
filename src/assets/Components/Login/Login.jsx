@@ -1,76 +1,100 @@
-import React from 'react'
-import "../Login/login.css"
+import React, { useState } from 'react';
+import "../Login/login.css";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { LuUser } from "react-icons/lu";
 import { MdLockOutline } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
-
     const navigate = useNavigate();
 
-  return (
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    <>
+    const checkApi = async () => {
+            const response = await axios.get("https://67007c964da5bd2375542275.mockapi.io/users");
+            const users = response.data;
+            console.log(users);
+            
+            
+            const user = users.find(user => user.username === username && user.password === password);
 
-      <main>
-        <section className="login-section">
-         <div className="login-container">
-            <form className="login-form">
+            if (user) {
+                navigate(`/welcome/${user.username}`);
+            } else {
+                setError('Invalid username or password');
+            }
+    };
+   
 
-                <span className="login-title">Login</span>
-                 
-                <span>Username</span>
-                <div className="login-input">
-                    <LuUser  className='username'/>
-                    <input className='inp-user' type="text" placeholder="Type your username"/>
-                </div>
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+        checkApi(); 
+    };
 
-                    <span>Password</span>
-                <div className="login-input">
-                    <input type="text" placeholder="Type your password"/>
-                    <MdLockOutline className='lock' />
-                </div>
+    return (
+        <>
+            <main>
+                <section className="login-section">
+                    <div className="login-container">
+                        <form className="login-form" onSubmit={handleSubmit}>
+                            <span className="login-title">Login</span>
 
-                <div className="text-right">
-                    <a href="">Forgot password?</a>
-                </div>
+                            <span>Username</span>
+                            <div className="login-input">
+                                <LuUser className='username' />
+                                <input
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    className='inp-user'
+                                    type="text"
+                                    placeholder="Type your username"
+                                />
+                            </div>
 
-                <button>LOGIN</button>
+                            <span>Password</span>
+                            <div className="login-input">
+                                <input
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    type="password"
+                                    placeholder="Type your password"
+                                />
+                                <MdLockOutline className='lock' />
+                            </div>
 
-                <div className="text-center" onClick={() => navigate("/signUp")}>
-                    <a href="">Or Sign Up Using</a>
-                    {/* <span>Or Sign Up Using</span> */}
-                </div>
+                            {error && <p className="input-error">{error}</p>}
 
-                <div className="icons">
-                    <a href="">
-                    <FaFacebookF className='facebook' />
-                    </a>
-                    <a href="">
-                    <FaTwitter className='twitter' />
-                    </a>
-                    <a href="">
-                    <FaGoogle  className='google' />
-                    </a>
-                </div>
+                            <div className="text-right">
+                                <a href="">Forgot password?</a>
+                            </div>
 
-                <div className="text-bottom">
-                <span class="txt1">Or Sign Up Using</span> <br />
-                <a href="#" class="txt2">Sign Up</a>
-                </div>
+                            <button type="submit">LOGIN</button>
 
+                            <div className="text-center" onClick={() => navigate("/signUp")}>
+                                <a href="">Or Sign Up Using</a>
+                            </div>
 
-            </form>
-         </div>
-        </section>
-    </main>
- 
-    </>
-  )
+                            <div className="icons">
+                                <a href=""><FaFacebookF className='facebook' /></a>
+                                <a href=""><FaTwitter className='twitter' /></a>
+                                <a href=""><FaGoogle className='google' /></a>
+                            </div>
 
-}
+                            <div className="text-bottom">
+                                <span className="txt1">Or Sign Up Using</span> <br />
+                                <a href="#" className="txt2">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </>
+    );
+};
 
-export default Login
+export default Login;

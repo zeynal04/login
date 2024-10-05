@@ -112,8 +112,13 @@
     font-family: Poppins-Medium;
     font-size: 16px;
     border: none;
+    cursor: pointer;
     border-radius: 25px;
     background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+}
+.login-form button:hover{
+    transition: 1s;
+    background: -webkit-linear-gradient(left,  #fc00ff,#00dbde, #fc00ff);
 }
 
 .text-center {
