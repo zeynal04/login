@@ -1,13 +1,13 @@
 import * as yup from "yup";
 
 export const formRegisterSchema = yup.object().shape({
-    fullname: yup.string().required("must be filled !"),
-    username: yup.string().required("must be filled !"),
+    fullname: yup.string().required("burani doldurun"),
+    username: yup.string().required("burani doldurun"),
     email: yup
     .string()
-    .email("Please enter a valid email address")
-    .required("must be filled !"),
-    password: yup.string().required("must be filled !"),
+    .email("dogru email qeyd edin")
+    .required("burani doldurun"),
+    password: yup.string().required("burani doldurun"),
     repeatPassword: yup
     .string()
     .required()

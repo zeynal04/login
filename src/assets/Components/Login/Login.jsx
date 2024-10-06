@@ -86,8 +86,7 @@ const Login = () => {
                             </div>
 
                             <div className="text-bottom">
-                                <span className="txt1">Or Sign Up Using</span> <br />
-                                <a href="#" className="txt2">Sign Up</a>
+                           <a href="#" className="txt2">Sign Up</a>
                             </div>
                         </form>
                     </div>
